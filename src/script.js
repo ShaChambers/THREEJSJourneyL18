@@ -22,11 +22,20 @@ const textureLoader = new THREE.TextureLoader()
 /**
  * Particles
  */
-const particlesGeometry = new THREE.Sphere(1, 32, 32)
-const particlesMaterial = new THREE.PointsMaterial({
-    size: 0.02,
-    sizeAttenuation: true
-})
+
+//Geometry
+const particlesGeometry = new THREE.SphereGeometry(1, 32, 32)
+
+//Material
+const particlesMaterial = new THREE.PointsMaterial()
+    particlesMaterial.size = 0.02,
+    particlesMaterial.sizeAttenuation = true
+
+
+//Points
+const particles = new THREE.Points(particlesGeometry, particlesMaterial)
+scene.add(particles)
+
 /**
  * Sizes
  */
